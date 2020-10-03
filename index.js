@@ -7,4 +7,5 @@ passport.use(new GoogleStrategy());
 const PORT = process.env.PORT || 5000;
 const name = "master";
 const sal = "sal";
+const adni = "andi";
 app.listen(PORT);
