@@ -17,7 +17,8 @@ module.exports = (app) => {
 
   app.get("/api/logout", (req, res) => {
     req.logout();
-    res.send(req.user);
+    //redirect to home after user logs out
+    res.redirect("/");
   });
   //someone who has already logged in can get access to their user
   app.get("/api/current_user", (req, res) => {

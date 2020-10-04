@@ -17,7 +17,7 @@ class Header extends Component {
     }
     return (
       <li>
-        <a>Logout</a>
+        <a href="/api/logout">Logout</a>
       </li>
     );
   }
