@@ -7,4 +7,14 @@ module.exports = (app) => {
   );
 
   app.get("/auth/google/callback", passport.authenticate("google"));
+
+  app.get("/api/logout", (req, res) => {
+    req.logout();
+    res.send(req.user);
+  });
+  //someone who has already logged in can get access to their user
+  app.get("/api/current_user", (req, res) => {
+    // console.log(req);
+    res.send(req.user);
+  });
 };
