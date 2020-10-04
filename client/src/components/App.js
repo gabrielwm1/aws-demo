@@ -8,9 +8,8 @@ import * as actions from "../actions";
 import Header from "./Header";
 import Landing from "./Landing";
 import Dashboard from "./Dashboard";
-
-const ChimeMeeting = () => <h2>ChimeMeeting</h2>;
-
+import ChimeMeeting from "./ChimeMeeting";
+import { MeetingProvider } from "amazon-chime-sdk-component-library-react";
 class App extends Component {
   //lifecyle method
   componentDidMount() {
@@ -23,9 +22,11 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Header />
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/meetings" component={Dashboard} />
-            <Route path="/meetings/new" component={ChimeMeeting} />
+            <MeetingProvider>
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/meetings" component={Dashboard} />
+              <Route path="/meetings/new" component={ChimeMeeting} />
+            </MeetingProvider>
           </div>
         </BrowserRouter>
       </div>
