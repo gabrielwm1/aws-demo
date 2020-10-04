@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MeetingProvider } from "amazon-chime-sdk-component-library-react";
+
 const Dashboard = () => {
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>Upcoming lessons: </h1>
-      <h3>French: Amy, 5pm</h3>
-      <h3>Guitar: Zach, 6pm</h3>
-      <h3>Bass: Nate, 7pm</h3>
+      <h1>Today's lessons: </h1>
+      <h5>French: Amy, 5pm</h5>
+      <h5>Guitar: Zach, 6pm</h5>
+      <h5>Bass: Nate, 7pm</h5>
 
       <Link to={"/meetings/new"}>
         <button className="btn-large btn-flat">go to lesson</button>
