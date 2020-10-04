@@ -6,7 +6,14 @@ module.exports = (app) => {
     passport.authenticate("google", { scope: ["profile", "email"] })
   );
 
-  app.get("/auth/google/callback", passport.authenticate("google"));
+  app.get(
+    "/auth/google/callback",
+    passport.authenticate("google"),
+    //send user to dashboard after successfully authenticating with google
+    (req, res) => {
+      res.redirect("/meetings");
+    }
+  );
 
   app.get("/api/logout", (req, res) => {
     req.logout();
