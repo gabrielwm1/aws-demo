@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+//compatibility between react and redux libraries
 import { connect } from "react-redux";
+
 import * as actions from "../actions";
 
 import Header from "./Header";
@@ -29,5 +31,5 @@ class App extends Component {
     );
   }
 }
-
+//gives certtain components ability  to call action creators
 export default connect(null, actions)(App);
