@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 //pull out the auth piece of state to see if user is logged in
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 class Header extends Component {
   //check state
   renderContent() {
@@ -26,7 +27,12 @@ class Header extends Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <a className="left brand-logo">Chime Demo</a>
+          <Link
+            to={this.props.auth ? "/meetings" : "/"}
+            className="left brand-logo"
+          >
+            Chime Demo
+          </Link>
           <ul className="right">{this.renderContent()}</ul>
         </div>
       </nav>

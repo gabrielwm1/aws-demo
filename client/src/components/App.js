@@ -6,9 +6,10 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 
 import Header from "./Header";
-const Dashboard = () => <h2>Dashboard</h2>;
+import Landing from "./Landing";
+import Dashboard from "./Dashboard";
+
 const ChimeMeeting = () => <h2>ChimeMeeting</h2>;
-const Landing = () => <h2>Landing</h2>;
 
 class App extends Component {
   //lifecyle method
